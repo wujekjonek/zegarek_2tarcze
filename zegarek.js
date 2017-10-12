@@ -28,13 +28,10 @@ function pokazPanelGodzin() {
     if (m < 10) {
         m = "0" + m;
     }
-    // else{}
 
     if (n < 10) {
         n = "0" + n;
     }
-    // else{}
-
 
     ustawionaGodzina = n;
     document.getElementById("wybierzGodzine").value = n + ":" + m;
@@ -59,12 +56,14 @@ function ustawianieGodziny() {
     godzinyspot.setAttribute("transform", "rotate(" + ((window.event.target.id * 30) + 90) + "," + srednica / 2 + "," + srednica / 2 + ")");
 
     if (document.getElementById("AmPm").innerHTML === "PM") {
-
-
-        xx.value = (parseInt(window.event.target.id) + 12) + ":" + m;
-        ustawionaGodzina = (parseInt(window.event.target.id) + 12);
-
-
+        if (parseInt(window.event.target.id) == 12) {
+            xx.value = "00" + ":" + m;
+            ustawionaGodzina = "00";
+        }
+        else {
+            xx.value = (parseInt(window.event.target.id) + 12) + ":" + m;
+            ustawionaGodzina = (parseInt(window.event.target.id) + 12);
+        }
     }
     else {
         if (parseInt(window.event.target.id) < 10) {
@@ -81,7 +80,7 @@ function ustawianieGodziny() {
 
 function ustawianieMinuty() {
 
-    if (window.event.target.id < 9) {
+    if (window.event.target.id < 10) {
         document.getElementById("wybierzGodzine").value = ustawionaGodzina + ":" + "0" + (window.event.target.id);
     }
     else {
@@ -309,37 +308,19 @@ function zmianaAmPm() {
         document.getElementById("AmPm").innerHTML = "PM";
         ustawionaGodzina = (parseInt(ustawionaGodzina) + 12);
         document.getElementById("wybierzGodzine").value = (ustawionaGodzina) + ":" + m;
-        // console.log("pierwsze if");
-
-
     } else if (document.getElementById("AmPm").innerHTML === "PM") {
         document.getElementById("AmPm").innerHTML = "AM";
-
         ustawionaGodzina = (parseInt(ustawionaGodzina) - 12);
         if (ustawionaGodzina < 10) {
-
-
             document.getElementById("wybierzGodzine").value = "0" + (ustawionaGodzina) + ":" + m;
-            // console.log("2 else if");
-
-
         }
-
-
         else {
-
-
             document.getElementById("wybierzGodzine").value = (ustawionaGodzina) + ":" + m;
             console.log("2 else if");
-
         }
-
-
     }
     else {
     }
-
-
 }
 
 
