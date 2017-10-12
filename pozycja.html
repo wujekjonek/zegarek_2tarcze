@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kursor</title>
+</head>
+<body>
+<h1> test pozycji kursora !</h1>
+
+<textarea id="wybierzGodzine" size="5">12:34</textarea>
+
+
+<!--<input type="text" id="wybierzGodzine" size="5"  > 131314   <br>-->
+
+
+<script>
+    let textarea = document.querySelector("textarea");
+    textarea.addEventListener("click", function () {
+        console.log(getCaretPosition(textarea));
+
+
+        if (getCaretPosition(textarea) < 3) {
+            console.log("GODZINY");
+        }
+        else {
+            console.log("MINUTY");
+        }
+    });
+
+    function getCaretPosition(textarea) {
+        return textarea.selectionStart
+    }
+
+
+</script>
+
+
+</body>
+</html>
+
+
