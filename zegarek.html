@@ -2,37 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Super zegarek</title>
+    <title>WALIDACJA</title>
     <link rel="stylesheet" href="zegarek.css">
 </head>
 <body>
-
-
-
-
-
-
 <body bgcolor="#9d958d">
-
+<h1>walidacja wtorek 10:07</h1>
 <p> zegarek 2 tarcze</p>
-<br>
+<p> plik walidujGodzine.js</p>
+<br><br><br>
 
-
- <!--<input type="text" id="wybierzGodzine" size="5"  ><br>-->
-
-
-<textarea id="wybierzGodzine" size="5" ></textarea>
-
-
-
-
-
-
-
-
+<textarea id="wybierzGodzine"
+          placeholder="HH:MM"
+          oninput="waliduj()"></textarea>
 
 <br>
+<p>wpisz kod pocztowy</p>
+<textarea id="kodPocztowy"
+          placeholder="00-000"></textarea>
+
 
 <script src="zegarek.js"></script>
+<script src="walidujGodzine.js"></script>
+
+
+<!--oninput="waliduj()"-->
+
 </body>
 </html>
